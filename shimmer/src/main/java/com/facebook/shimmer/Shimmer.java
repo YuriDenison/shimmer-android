@@ -373,8 +373,8 @@ public class Shimmer {
     }
 
     /**
-     * Sets how the shimmering animation will repeat. See {@link
-     * android.animation.ValueAnimator#setRepeatMode(int)}.
+     * Indicates if the drawable needs to be mirrored when its layout direction is RTL (right-to-left).
+     * See {@link android.graphics.drawable.Drawable#setAutoMirrored(boolean).}
      */
     public T setAutoMirrored(boolean autoMirrored) {
       mShimmer.autoMirrored = autoMirrored;
