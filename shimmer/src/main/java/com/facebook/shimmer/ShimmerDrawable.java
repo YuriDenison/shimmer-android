@@ -87,6 +87,11 @@ public final class ShimmerDrawable extends Drawable {
   }
 
   @Override
+  public boolean isAutoMirrored() {
+    return mShimmer != null && mShimmer.autoMirrored;
+  }
+
+  @Override
   public void draw(@NonNull Canvas canvas) {
     if (mShimmer == null || mShimmerPaint.getShader() == null) {
       return;
@@ -100,11 +105,11 @@ public final class ShimmerDrawable extends Drawable {
     final float animatedValue = mValueAnimator != null ? mValueAnimator.getAnimatedFraction() : 0f;
     switch (mShimmer.direction) {
       default:
-      case Shimmer.Direction.LEFT_TO_RIGHT:
+      case Shimmer.Direction.START_TO_END:
         dx = offset(-translateWidth, translateWidth, animatedValue);
         dy = 0;
         break;
-      case Shimmer.Direction.RIGHT_TO_LEFT:
+      case Shimmer.Direction.END_TO_START:
         dx = offset(translateWidth, -translateWidth, animatedValue);
         dy = 0f;
         break;
