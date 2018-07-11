@@ -17,9 +17,9 @@
     </attr>
     <attr name="shimmer_autoMirrored" format="boolean"/>
     <attr name="shimmer_direction" format="enum">
-      <enum name="start_to_end" value="0"/>
+      <enum name="left_to_right" value="0"/>
       <enum name="top_to_bottom" value="1"/>
-      <enum name="end_to_start" value="2"/>
+      <enum name="right_to_left" value="2"/>
       <enum name="bottom_to_top" value="3"/>
     </attr>
     <attr name="shimmer_dropoff" format="float"/>

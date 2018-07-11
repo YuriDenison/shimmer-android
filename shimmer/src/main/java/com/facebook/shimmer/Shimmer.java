@@ -40,15 +40,15 @@ public class Shimmer {
   /** Direction of the shimmer's sweep. */
   @Retention(RetentionPolicy.SOURCE)
   @IntDef({
-      Direction.START_TO_END,
+      Direction.LEFT_TO_RIGHT,
       Direction.TOP_TO_BOTTOM,
-      Direction.END_TO_START,
+      Direction.RIGHT_TO_LEFT,
       Direction.BOTTOM_TO_TOP
   })
   public @interface Direction {
-    int START_TO_END = 0;
+    int LEFT_TO_RIGHT = 0;
     int TOP_TO_BOTTOM = 1;
-    int END_TO_START = 2;
+    int RIGHT_TO_LEFT = 2;
     int BOTTOM_TO_TOP = 3;
   }
 
@@ -56,7 +56,7 @@ public class Shimmer {
   final int[] colors = new int[COMPONENT_COUNT];
   final RectF bounds = new RectF();
 
-  @Direction int direction = Direction.START_TO_END;
+  @Direction int direction = Direction.LEFT_TO_RIGHT;
   @ColorInt int highlightColor = Color.WHITE;
   @ColorInt int baseColor = 0x4cffffff;
   @Shape int shape = Shape.LINEAR;
@@ -189,14 +189,14 @@ public class Shimmer {
             a.getInt(R.styleable.ShimmerFrameLayout_shimmer_direction, mShimmer.direction);
         switch (direction) {
           default:
-          case Direction.START_TO_END:
-            setDirection(Direction.START_TO_END);
+          case Direction.LEFT_TO_RIGHT:
+            setDirection(Direction.LEFT_TO_RIGHT);
             break;
           case Direction.TOP_TO_BOTTOM:
             setDirection(Direction.TOP_TO_BOTTOM);
             break;
-          case Direction.END_TO_START:
-            setDirection(Direction.END_TO_START);
+          case Direction.RIGHT_TO_LEFT:
+            setDirection(Direction.RIGHT_TO_LEFT);
             break;
           case Direction.BOTTOM_TO_TOP:
             setDirection(Direction.BOTTOM_TO_TOP);

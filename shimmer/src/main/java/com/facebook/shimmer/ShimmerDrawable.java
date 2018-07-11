@@ -105,11 +105,11 @@ public final class ShimmerDrawable extends Drawable {
     final float animatedValue = mValueAnimator != null ? mValueAnimator.getAnimatedFraction() : 0f;
     switch (mShimmer.direction) {
       default:
-      case Shimmer.Direction.START_TO_END:
+      case Shimmer.Direction.LEFT_TO_RIGHT:
         dx = offset(-translateWidth, translateWidth, animatedValue);
         dy = 0;
         break;
-      case Shimmer.Direction.END_TO_START:
+      case Shimmer.Direction.RIGHT_TO_LEFT:
         dx = offset(translateWidth, -translateWidth, animatedValue);
         dy = 0f;
         break;
